@@ -1,10 +1,8 @@
 public class Account
 {
-    //fields or instance variables
-    private String fname;   // first name
-    private String lname;   // last name
+    private String fname, lname;
     private int number;     // account number
-    private double balance, totalBal, initialBal, howMuch;     
+    private double balance;
     
     // constructor
     public Account(String inFN, String inLN, int inNum, double inBal)
@@ -22,10 +20,8 @@ public class Account
     
     
         public int getNumber()        // accessor method
-        
     {
             return number;
-    
     }
     
     public double getBalance()         // accessor method
@@ -34,24 +30,20 @@ public class Account
         
     }
     
-    public double deposit(double inDeposit)
+    public void deposit(double amt)
     {
-        totalBal = howMuch + initialBal;
-        
-        return totalBal;
+        balance += amt;
     }
     
-    public double withdraw(double inWith)     // new method
+    public void withdraw(double amt)     // new method
     {
-        if(inWith > balance)
+        if(amt > balance)
             System.out.println("Insufficient funds.");
         else
-            totalBal = balance - inWith;
-            
-            return totalBal;
+            balance -= amt;
     }
     
-    public double interest()
+    public double interest() 
     {
         //increase the balance based on the interest rate
         // for the amount of money currently in the account
@@ -67,7 +59,7 @@ public class Account
             return balance;
     }
     
-    public void penalty()
+    public void penalty() //same as above
     {
         if(balance < 200)
             balance = balance - 5;
