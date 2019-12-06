@@ -1,6 +1,7 @@
 //import statements tell Java where to find existing classes
 import java.awt.*;
 import javax.swing.*;
+import java.util.Scanner;
 
 public class HappyDriver
 {
@@ -15,6 +16,6 @@ public class HappyDriver
         w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container c = w.getContentPane();c.add(new Happy());//make sure this is the name of the class
         w.setVisible(true);
+        
     }
 }
-
